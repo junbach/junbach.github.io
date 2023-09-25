@@ -1,32 +1,39 @@
-import { useState } from "react";
+import "@mantine/core/styles.css";
 
-import reactLogo from "./assets/react.svg";
+import { AppShell, Burger, Group, Skeleton, ScrollArea, MantineProvider } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
-import "./App.css";
+import { theme } from "~/theme.ts";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
+  const [opened, { toggle }] = useDisclosure();
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={"/vite.svg"} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <MantineProvider theme={theme}>
+      <AppShell
+        header={{ height: 60 }}
+        navbar={{ width: 300, breakpoint: "sm", collapsed: { mobile: !opened } }}
+        padding="md"
+      >
+        <AppShell.Header>
+          <Group h="100%" px="md">
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <img src={"/react.svg"} className="logo react" alt="React logo" width={30} />
+          </Group>
+        </AppShell.Header>
+        <AppShell.Navbar p="md">
+          <AppShell.Section>Navbar header</AppShell.Section>
+          <AppShell.Section grow my="md" component={ScrollArea}>
+            60 links in a scrollable section
+            {Array(60)
+              .fill(0)
+              .map((_, index) => (
+                <Skeleton key={index} h={28} mt="sm" animate={false} />
+              ))}
+          </AppShell.Section>
+          <AppShell.Section>Navbar footer – always at the bottom</AppShell.Section>
+        </AppShell.Navbar>
+        <AppShell.Main>Main</AppShell.Main>
+      </AppShell>
+    </MantineProvider>
   );
 }
-
-export default App;

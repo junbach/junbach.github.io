@@ -3,7 +3,7 @@ settings:
   react:
     version: "detect"
   import/parsers:
-    "@typescript-eslint/parser": [ ".ts", ".tsx" ]
+    "@typescript-eslint/parser": [".ts", ".tsx"]
   import/resolver:
     typescript: true
     node: true
@@ -19,7 +19,7 @@ extends:
   - "plugin:import/recommended"
   - "plugin:import/typescript"
   - "prettier"
-plugins: [ "@typescript-eslint" ]
+plugins: ["@typescript-eslint"]
 parserOptions:
   sourceType: "module"
   ecmaVersion: 2020
