@@ -3,7 +3,6 @@
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/junbach/junbach.github.io/publish-page.yml?style=for-the-badge&logo=github&logoColor=white)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/junbach/junbach.github.io?style=for-the-badge)
 
-
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
